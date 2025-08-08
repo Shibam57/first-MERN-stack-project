@@ -2,8 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const app = express();
-const path = require('path');
-import { fileURLToPath } from "url";
+const path = require("path");
 
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
@@ -23,12 +22,10 @@ const userRouter = require('./routes/userRoute.js');
 app.use('/v1/users', userRouter); 
 
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename); // Needed because __dirname isn't defined in ES modules
-app.use(express.static(path.join(__dirnamePath, 'dist')));
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 app.get(/.*/, (req, res) => {
-    res.sendFile(path.join(__dirnamePath, 'dist', 'index.html'));
+    res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
 });
 
 module.exports = app;
