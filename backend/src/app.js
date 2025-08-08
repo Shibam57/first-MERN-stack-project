@@ -22,10 +22,10 @@ const userRouter = require('./routes/userRoute.js');
 app.use('/v1/users', userRouter); 
 
 
-app.use(express.static(path.join(__dirname, '../../frontend/dist')));
+app.use(express.static(path.join(__dirname, '../../../frontend/dist')));
 
 app.get(/.*/, (req, res) => {
-    res.sendFile(path.join(__dirname,  '../../frontend/dist/index.html'));
+    res.sendFile(path.join(__dirname,  '../../../frontend/dist/index.html'));
 });
 
 module.exports = app;
