@@ -32,7 +32,7 @@ function Navbar() {
       try {
         const token = localStorage.getItem('token')
         if(token && token !== "undefined"){
-          await axios.post('/v1/users/logout',
+          await axios.post('http://localhost:4000/v1/users/logout',
             {},
             {
               headers: {
