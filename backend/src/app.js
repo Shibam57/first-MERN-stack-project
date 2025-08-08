@@ -25,7 +25,7 @@ app.use('/v1/users', userRouter);
 app.use(express.static(path.join(__dirname, '/dist')));
 
 app.get(/.*/, (req, res) => {
-    res.sendFile(path.join(__dirname,  '/dist/index.html'));
+    res.sendFile(path.join(__dirname,  '/dist/', 'index.html'));
 });
 
 module.exports = app;
