@@ -15,7 +15,7 @@ const generateAccessAndRefereshTokens=async(userId)=>{
             throw new ApiError(404, "User not found")
         }
 
-       
+        console.log("User found: ",user.email)
 
         const accessToken=await user.generateAccessToken()
         const refreshToken=await user.generateRefereshToken()
@@ -30,6 +30,9 @@ const generateAccessAndRefereshTokens=async(userId)=>{
 }
 
 const registerUser= asyncHandler(async(req, res)=>{
+
+    console.log("REQ.BODY =>", req.body);
+    console.log("REQ.FILES =>", req.files);
     
     const {fullName, email, username, password}=req.body;
 
@@ -82,7 +85,8 @@ const registerUser= asyncHandler(async(req, res)=>{
 )})
 
 const loginUser=asyncHandler(async(req, res)=>{
-   
+    
+    console.log("Body:", req.body);
 
     const {email, password} = req.body
 
@@ -111,6 +115,8 @@ const loginUser=asyncHandler(async(req, res)=>{
         secure: true
     }
 
+    console.log("Access Token:", accessToken);
+    console.log("Refresh Token:", refreshToken);
 
     return res.status(200)
     .cookie("accessToken", accessToken, options)
