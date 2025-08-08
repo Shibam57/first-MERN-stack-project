@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   server: {
     proxy: {
-      '/v1': 'http://localhost:4000'
+      "/v1": "https://ccp-user-data-backend.onrender.com"
     }
   },
   plugins: [tailwindcss(),react()],
