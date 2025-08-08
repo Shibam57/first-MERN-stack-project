@@ -13,14 +13,10 @@ const uploadOnCloudinary = async (localFilePath) => {
     try {
         if (!localFilePath) return null;
 
-        console.log("Uploading to Cloudinary:", localFilePath);
-
         const uploadResult = await cloudinary.uploader.upload(localFilePath, {
             folder: "avatars",
             resource_type: "auto"
         });
-
-        console.log(" Upload successful:", uploadResult);
         fs.unlinkSync(localFilePath);
         return uploadResult;
     } catch (error) {

@@ -31,15 +31,14 @@ function Navbar() {
     const handleLogout=async()=>{
       try {
         const token = localStorage.getItem('token')
-        console.log("Logging out with token:", token);
         if(token && token !== "undefined"){
-          await axios.post('http://localhost:4000/v1/users/logout',
+          await axios.post('/v1/users/logout',
             {},
             {
               headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${localStorage.getItem('token')}`
               },
-              withCredentials: true,
+              withCredentials: true
             }
           )
         }

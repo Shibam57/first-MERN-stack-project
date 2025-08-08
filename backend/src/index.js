@@ -4,7 +4,6 @@ const app=require('./app.js')
 
 const port=process.env.PORT;
 
-// console.log(process.env)
 
 connectDB().then(()=>{
     app.on("error", (error)=>{

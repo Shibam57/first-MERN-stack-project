@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { ToastContainer } from "react-toastify";
 
 function SignUp() {
 
@@ -42,7 +43,7 @@ function SignUp() {
     }
 
     try {
-      const res=await axios.post('http://localhost:4000/v1/users/register', data, {
+      const res=await axios.post('/v1/users/register', data, {
         withCredentials: true,
         headers: {
           'Content-Type': 'multipart/form-data',
@@ -152,6 +153,7 @@ function SignUp() {
           </p>
         </form>
       </div>
+      <ToastContainer />
     </div>
   )
 }

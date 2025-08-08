@@ -7,9 +7,6 @@ const verifyJWT=asyncHandler(async(req, res, next)=>{
     try {
         const authHeader = req.header("Authorization");
         let token = req.cookies?.accessToken;
-
-        console.log("Cookies:", req.cookies);
-        console.log("Authorization Header:", req.headers.authorization);
         
         if (!token && authHeader && authHeader.startsWith("Bearer ")) {
             token = authHeader.split(" ")[1];

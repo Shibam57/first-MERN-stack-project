@@ -9,7 +9,8 @@ import Login from './components/Login';
 import Home from './components/Home';
 import { MainCart } from './components/MainCart';
 import {RouterProvider, createBrowserRouter, Navigate} from 'react-router-dom'
-// import ProtectedRoute from './ProtectedRoute'
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const router = createBrowserRouter([
   {

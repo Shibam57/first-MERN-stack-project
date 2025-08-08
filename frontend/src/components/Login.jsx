@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import axios from 'axios'
+import { ToastContainer } from "react-toastify"
+import { handleError, handleSuccess } from "../Util.jsx"
 
 function Login() {
 
@@ -31,13 +33,13 @@ function Login() {
       
       localStorage.setItem('token', res.data.data.accessToken)
       localStorage.setItem('user', JSON.stringify(res.data.data.user));
+      handleSuccess("Login Successful")
       alert('Login Successful')
-      console.log(res.data.token)
       navigate('/Home')
       
     } catch (error) {
       console.error("Login error", error)
-      alert(error?.response?.data?.message || 'Invalid credentials')
+      handleError('Invalid credentials')
     }
   }
 
@@ -110,6 +112,7 @@ function Login() {
           </p>
         </form>
       </div>
+      <ToastContainer />
     </div>
     </>
   )
