@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/index.js",
-    "build": "cd frontend && npm run build && mv dist ../backend/frontend/dist"
+    "build": "/opt/render/project/src/frontend/dist/index.html"
   },
   "keywords": [],
   "author": "",
