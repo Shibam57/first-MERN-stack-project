@@ -24,7 +24,7 @@ function Login() {
     e.preventDefault()
 
     try {
-      const res=await axios.post('http://localhost:4000/v1/users/login', formData, {
+      const res=await axios.post('/v1/users/login', formData, {
         headers: {
           'Content-type': 'application/json'
         }
