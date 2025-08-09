@@ -13,7 +13,7 @@ app.use(cors({
 
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb'  }));
-app.use(express.static('public'));
+// app.use(express.static('public'));
 app.use(cookieParser());
 
 
@@ -28,7 +28,7 @@ app.use('/v1/users', userRouter);
 app.use(express.static(path.join(__dirname, '../../frontend', 'dist')));
 
 app.get(/.*/, (req, res) => {
-  res.sendFile(path.join(__dirname, '../../FIRSTMERNPRO/frontend/dist/index.html'));
+  res.sendFile(path.join(__dirname, '../FIRSTMERNPRO/frontend/dist/index.html'));
 });
 
 module.exports = app;
