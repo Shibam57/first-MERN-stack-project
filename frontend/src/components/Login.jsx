@@ -31,8 +31,8 @@ function Login() {
       })
 
       
-      localStorage.setItem('token', res.data.data.accessToken)
-      localStorage.setItem('user', JSON.stringify(res.data.data.user));
+      localStorage.setItem('token', res.data.accessToken)
+      localStorage.setItem('user', JSON.stringify(res.data.user));
       handleSuccess("Login Successful")
       alert('Login Successful')
       navigate('/Home')
