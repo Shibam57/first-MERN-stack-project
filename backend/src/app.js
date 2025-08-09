@@ -25,10 +25,12 @@ app.use('/v1/users', userRouter);
 
 
 
-app.use(express.static(path.join(__dirname, '../../frontend', 'dist')));
+const distPath = path.join(__dirname, '..', '..', 'frontend', 'dist');
+
+app.use(express.static(distPath));
 
 app.get(/.*/, (req, res) => {
-  res.sendFile(path.join(__dirname, '../FIRSTMERNPRO/frontend/dist/index.html'));
+  res.sendFile(path.join(distPath, 'index.html'));
 });
 
 module.exports = app;
