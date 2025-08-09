@@ -25,7 +25,7 @@ app.use('/v1/users', userRouter);
 
 
 
-const distPath = path.join(__dirname, "..", "frontend", "dist");
+const distPath = path.join(__dirname, "..","..", "frontend", "dist");
 
 app.use(express.static(distPath));
 
